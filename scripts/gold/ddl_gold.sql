@@ -17,6 +17,9 @@ Usage:
 --===============================================================
 -- DIMENTION CUSTOMERS
 --===============================================================
+IF OBJECT_ID('gold.dim_customers','V') IS NOT NULL
+	DROP VIEW gold.dim_customers;
+
 CREATE VIEW gold.dim_customers AS
 SELECT
 	ROW_NUMBER() OVER(ORDER BY cst_id) AS customer_key,
@@ -41,6 +44,8 @@ LEFT JOIN silver.erp_loc_a101 la ON la.cid=ci.cst_key
 --==========================================================
 -- DIMENSION PRODUCT
 --==========================================================
+IF OBJECT_ID('gold.dim_products','V') IS NOT NULL
+	DROP VIEW gold.dim_products;
 
 CREATE VIEW gold.dim_products AS
 SELECT ROW_NUMBER() OVER(ORDER BY  pn.prd_start_dt,pn.prd_id) AS product_key
@@ -67,6 +72,8 @@ SELECT ROW_NUMBER() OVER(ORDER BY  pn.prd_start_dt,pn.prd_id) AS product_key
 --===========================================================
 -- FACT SALES
 --============================================================
+IF OBJECT_ID('gold.fact_sales','V') IS NOT NULL
+	DROP VIEW gold.fact_sales;
 
 CREATE VIEW gold.fact_sales AS
 SELECT sls_ord_num AS order_number
