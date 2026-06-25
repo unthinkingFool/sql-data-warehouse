@@ -67,3 +67,21 @@ SELECT ROW_NUMBER() OVER(ORDER BY  pn.prd_start_dt,pn.prd_id) AS product_key
 --===========================================================
 -- FACT SALES
 --============================================================
+
+CREATE VIEW gold.fact_sales AS
+SELECT sls_ord_num AS order_number
+      ,pr.product_key
+      ,cus.customer_key
+      ,sls_order_dt AS order_date
+      ,sls_ship_dt AS shipping_date
+      ,sls_due_dt AS due_date
+      ,sls_sales AS sales
+      ,sls_quantity AS quantity
+      ,sls_price AS price
+
+  FROM silver.crm_sales_details sd
+  LEFT JOIN gold.dim_customers cus ON cus.customer_id=sd.sls_cust_id
+  LEFT JOIN gold.dim_products pr ON pr.product_number=sd.sls_prd_key
+ 
+
+
