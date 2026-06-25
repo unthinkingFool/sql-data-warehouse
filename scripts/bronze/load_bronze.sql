@@ -43,7 +43,7 @@ BEGIN
 		SET @end_time=GETDATE()
 		PRINT'>>LOAD DURATION : '+CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) +' seconds .'
 		PRINT'-----------------------------------'
-		SELECT COUNT(*) FROM bronze.crm_cust_info
+		
 		--------------------------------------------------------------------
 		--------------------------------------------------------------------
 		SET @start_time=GETDATE()
@@ -61,7 +61,7 @@ BEGIN
 		PRINT'>>LOAD DURATION : '+CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) +' seconds .'
 		PRINT'-----------------------------------'
 
-		SELECT count(*) FROM bronze.crm_prd_info
+	
 		--------------------------------------------------------------------
 		--------------------------------------------------------------------
 		SET @start_time=GETDATE()
@@ -79,7 +79,7 @@ BEGIN
 		PRINT'>>LOAD DURATION : '+CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) +' seconds .'
 		PRINT'-----------------------------------'
 
-		SELECT count(*) FROM bronze.crm_sales_details
+	
 		--------------------------------------------------------------------
 		--------------------------------------------------------------------
 		PRINT '------------------------------------------------------------'
@@ -99,7 +99,7 @@ BEGIN
 		SET @end_time=GETDATE()
 		PRINT'>>LOAD DURATION : '+CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) +' seconds .'
 		PRINT'-----------------------------------'
-		SELECT COUNT(*) FROM bronze.erp_cust_az12
+		
 		---------------------------------------------------------------------
 		---------------------------------------------------------------------
 		SET @start_time=GETDATE()
@@ -116,7 +116,7 @@ BEGIN
 		SET @end_time=GETDATE()
 		PRINT'>>LOAD DURATION : '+CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) +' seconds .'
 		PRINT'-----------------------------------'
-		SELECT count(*) FROM bronze.erp_loc_a101
+	
 		---------------------------------------------------------------------
 		---------------------------------------------------------------------
 		SET @start_time=GETDATE()
@@ -133,7 +133,7 @@ BEGIN
 		SET @end_time=GETDATE()
 		PRINT'>>LOAD DURATION : '+CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) +' seconds .'
 		PRINT'-----------------------------------'
-		SELECT COUNT(*) FROM bronze.erp_px_cat_g1v2
+	
 		---------------------------------------------------------------------
 		---------------------------------------------------------------------
 		SET @batch_end_time=GETDATE()
