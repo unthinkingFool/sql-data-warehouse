@@ -37,7 +37,6 @@ This project involves:
 
 ## 🛠️ Important Links & Tools:
 
-Everything is for Free!
 
 - **[Datasets](https://github.com/unthinkingFool/sql-data-warehouse/tree/main/datasets)**: Access to the project datasets (CSV files).
 - **[SQL Server Express:](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)** Lightweight server for hosting your SQL database.
